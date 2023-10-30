@@ -260,8 +260,8 @@ bg_X = displayio.TileGrid(Xpointer, pixel_shader=Xpointer.pixel_shader)
 x_sign.append(bg_X)
 
 # Variables for the flow of the environment
-## Opendays (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)
-openDays = [0, 1, 1, 1, 1, 1, 0]
+## Opendays (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+openDays = [1, 1, 1, 1, 1, 0, 0]
 
 # Initialize a variable to keep track of the last time the action was performed
 last_action_time = None
@@ -295,7 +295,7 @@ button_down = digitalio.DigitalInOut(board.BUTTON_DOWN)
 button_down.direction = digitalio.Direction.INPUT
 button_down.pull = digitalio.Pull.UP
 
-delay = 0.03
+delay = 0.05
 
 while True:
     # only query the online time once per hour (and on first run)
